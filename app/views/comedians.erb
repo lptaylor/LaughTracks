@@ -10,12 +10,13 @@
   </header>
 
   <h1><% @comedians.each do |comedian| %>
-
+    <div class = "comedian_box">
       <p><%= comedian.name %></p>
     <ul>
       <li>Age: <%= comedian.age %></li>
       <li>City: <%= comedian.city %></li>
     </ul>
+    </div>
     <% end %>
   </h1>
 </body>

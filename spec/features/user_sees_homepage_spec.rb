@@ -14,4 +14,11 @@ RSpec.describe 'A visitor to our app' do
     expect(page).to have_content("City: #{comedian.city}")
   end
 
+  it 'should see a list of the comedians specials' do
+    comedian = Comedian.create(name: "John Doe", age: 0, city: "Nowhereseville").specials.create([{name: "Tacos the Unvarnished Truth"}])
+
+    visit '/comedians'
+
+    expect(page).to have_content(comedian.specials)
+  end
 end

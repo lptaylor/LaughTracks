@@ -8,14 +8,21 @@
   <header>
     Laugh Tracks
   </header>
-
-  <h1><% @comedians.each do |comedian| %>
-
-      <p><%= comedian.name %></p>
+  <h1>Comedians</h1>
+  <% @comedians.each do |comedian| %>
+  <div class="comedian-<%= comedian.id %>">
+    <p><%= comedian.name %></p>
     <ul>
       <li>Age: <%= comedian.age %></li>
       <li>City: <%= comedian.city %></li>
     </ul>
-    <% end %>
-  </h1>
+    <h2 class = "specials_box">Specials</h2>
+    <ul>
+      <% comedian.specials.each do |special| %>
+        <li>Title: <%= special.name %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <img src="https://m.media-amazon.com/images/M/MV5BMjA3ODI4NDExNl5BMl5BanBnXkFtZTcwMzY1MjYxMQ@@._V1_.jpg">
 </body>
